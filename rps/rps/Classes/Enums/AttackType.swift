@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum AttackType {
-    case rock
-    case paper
-    case scissors
+enum AttackType: String {
+    case rock = "rock"
+    case paper = "paper"
+    case scissors = "scissors"
     
     func isStrongerThan() -> [AttackType] {
         switch self {
@@ -33,5 +33,20 @@ enum AttackType {
         case .scissors:
             return [.rock]
         }
+    }
+    
+    func emoji() -> String {
+        switch self {
+        case .rock:
+            return "👊"
+        case .paper:
+            return "✋"
+        case .scissors:
+            return "✌"
+        }
+    }
+    
+    func localizedName() -> String {
+        return NSLocalizedString(self.rawValue, comment: "Attack name translated")
     }
 }

@@ -6,3 +6,6 @@
   Copyright © 2017 Robin Authiat. All rights reserved.
 */
 
+"rock" = "Rock";
+"paper" = "Paper";
+"scissors" = "Scissors";
