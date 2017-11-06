@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69D083DC1FB0F51500206F64 /* AttackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D083DB1FB0F51500206F64 /* AttackTests.swift */; };
+		69D083DF1FB0F61000206F64 /* AttackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D083DE1FB0F61000206F64 /* AttackType.swift */; };
+		69D083E01FB0F73800206F64 /* AttackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D083DE1FB0F61000206F64 /* AttackType.swift */; };
 		69E3B0EC1FB0E9EF003DB53B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E3B0EB1FB0E9EF003DB53B /* AppDelegate.swift */; };
 		69E3B0F11FB0E9EF003DB53B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E3B0EF1FB0E9EF003DB53B /* Main.storyboard */; };
 		69E3B0F31FB0E9EF003DB53B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E3B0F21FB0E9EF003DB53B /* Assets.xcassets */; };
@@ -24,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		69D083DB1FB0F51500206F64 /* AttackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AttackTests.swift; path = Enums/AttackTests.swift; sourceTree = "<group>"; };
+		69D083DE1FB0F61000206F64 /* AttackType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackType.swift; sourceTree = "<group>"; };
 		69E3B0E81FB0E9EF003DB53B /* rps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E3B0EB1FB0E9EF003DB53B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		69E3B0F01FB0E9EF003DB53B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69D083DD1FB0F5E600206F64 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				69D083DE1FB0F61000206F64 /* AttackType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		69E3B0DF1FB0E9EF003DB53B = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				69E3B1021FB0E9EF003DB53B /* Info.plist */,
+				69D083DB1FB0F51500206F64 /* AttackTests.swift */,
 			);
 			path = rpsTests;
 			sourceTree = "<group>";
@@ -92,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				69E3B0EB1FB0E9EF003DB53B /* AppDelegate.swift */,
+				69D083DD1FB0F5E600206F64 /* Enums */,
 				69E3B10D1FB0EC7D003DB53B /* Models */,
 				69E3B10C1FB0EC74003DB53B /* UIViewControllers */,
 				69E3B10E1FB0EC85003DB53B /* ViewModels */,
@@ -192,6 +207,7 @@
 					};
 					69E3B0FB1FB0E9EF003DB53B = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 69E3B0E71FB0E9EF003DB53B;
 					};
@@ -242,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69E3B0EC1FB0E9EF003DB53B /* AppDelegate.swift in Sources */,
+				69D083DF1FB0F61000206F64 /* AttackType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69D083DC1FB0F51500206F64 /* AttackTests.swift in Sources */,
+				69D083E01FB0F73800206F64 /* AttackType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,12 +449,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PLD8KXQT2B;
 				INFOPLIST_FILE = rpsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.robinauthiat.rpsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rps.app/rps";
@@ -447,6 +468,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PLD8KXQT2B;
 				INFOPLIST_FILE = rpsTests/Info.plist;
