@@ -13,25 +13,25 @@ enum AttackType: String {
     case paper = "paper"
     case scissors = "scissors"
     
-    func isStrongerThan() -> [AttackType] {
+    func isStrongerThan(_ attack: AttackType) -> Bool {
         switch self {
         case .rock:
-            return [.scissors]
+            return [.scissors].contains(attack)
         case .paper:
-            return [.rock]
+            return [.rock].contains(attack)
         case .scissors:
-            return [.paper]
+            return [.paper].contains(attack)
         }
     }
     
-    func isWeakerThan() -> [AttackType] {
+    func isWeakerThan(_ attack: AttackType) -> Bool {
         switch self {
         case .rock:
-            return [.paper]
+            return [.paper].contains(attack)
         case .paper:
-            return [.scissors ]
+            return [.scissors ].contains(attack)
         case .scissors:
-            return [.rock]
+            return [.rock].contains(attack)
         }
     }
     
