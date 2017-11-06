@@ -27,4 +27,13 @@ class User: NSObject {
     func didWinARound() {
         score += 1
     }
+    
+    func selectRandomAttack() {
+        guard type == .bot else {
+            print("User - selectRandomAttack(): Only the bots can use this method.")
+            return
+        }
+            
+        nextAttack = AttackType.allValues.randomItem()
+    }
 }
