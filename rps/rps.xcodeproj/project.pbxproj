@@ -99,8 +99,7 @@
 				69E3B10C1FB0EC74003DB53B /* UIViewControllers */,
 				69E3B10E1FB0EC85003DB53B /* ViewModels */,
 			);
-			name = Classes;
-			path = "New Group";
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		69E3B10C1FB0EC74003DB53B /* UIViewControllers */ = {
@@ -131,8 +130,7 @@
 				69E3B0F41FB0E9EF003DB53B /* LaunchScreen.storyboard */,
 				69E3B0EF1FB0E9EF003DB53B /* Main.storyboard */,
 			);
-			name = Ressources;
-			path = "New Group1";
+			path = Ressources;
 			sourceTree = "<group>";
 		};
 		69E3B1101FB0ED38003DB53B /* Supporting Files */ = {
