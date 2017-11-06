@@ -49,4 +49,16 @@ enum AttackType: String {
     func localizedName() -> String {
         return NSLocalizedString(self.rawValue, comment: "Attack name translated")
     }
+    
+    // MARK: - Static variable
+    
+    static var allValues: [AttackType] {
+        var allValues: [AttackType] = []
+        switch (AttackType.rock) {
+        case .rock: allValues.append(.rock); fallthrough
+        case .paper: allValues.append(.paper); fallthrough
+        case .scissors: allValues.append(.scissors)
+        }
+        return allValues
+    }
 }
