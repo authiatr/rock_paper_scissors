@@ -62,29 +62,28 @@ class GameViewModelTests: XCTestCase {
     
     func testGameIsOver() {
         // Can't check human vs bot because bot are playing randomly so I test with two human
-        let firstPlayer = User(.human)
-        let secondPlayer = User(.human)
-        let game = GamePlay(players: [ firstPlayer, secondPlayer ])
+        // Even if this mode doesn't exist
+        let userPlayer = User(.human)
+        let opponent = User(.human)
+        let game = GamePlay(players: [ userPlayer, opponent ])
         let gameViewModel = GameViewModel(game: game!)
         
         for _ in 0..<GamePlay.scoreGoal {
-            firstPlayer.nextAttack = .rock
-            secondPlayer.nextAttack = .paper
-            gameViewModel!.playNextRound(completion: { _ in }, error: { _ in })
+            gameViewModel!.playNextRound(userAttack: .rock, botAttack: .paper, completion: { _ in })
         }
         XCTAssertTrue(game!.isOver())
     }
     
     func testIRLPlayerWon() {
-        let firstPlayer = User(.human) // Real player
-        let secondPlayer = User(.human)
-        let game = GamePlay(players: [ firstPlayer, secondPlayer ])
+        // Can't check human vs bot because bot are playing randomly so I test with two human
+        // Even if this mode doesn't exist
+        let userPlayer = User(.human) // Real player
+        let opponent = User(.human)
+        let game = GamePlay(players: [ userPlayer, opponent ])
         let gameViewModel = GameViewModel(game: game!)
         
         for _ in 0..<GamePlay.scoreGoal {
-            firstPlayer.nextAttack = .rock
-            secondPlayer.nextAttack = .scissors
-            gameViewModel!.playNextRound(completion: { _ in }, error: { _ in })
+            gameViewModel!.playNextRound(userAttack: .rock, botAttack: .scissors, completion: { _ in })
         }
         let winner = game!.winner()
         XCTAssertTrue(game!.isOver())
@@ -93,15 +92,15 @@ class GameViewModelTests: XCTestCase {
     }
     
     func testIRLPlayerLost() {
-        let firstPlayer = User(.human) // Real player
-        let secondPlayer = User(.human)
-        let game = GamePlay(players: [ firstPlayer, secondPlayer ])
+        // Can't check human vs bot because bot are playing randomly so I test with two human
+        // Even if this mode doesn't exist
+        let userPlayer = User(.human) // Real player
+        let opponent = User(.human)
+        let game = GamePlay(players: [ userPlayer, opponent ])
         let gameViewModel = GameViewModel(game: game!)
         
         for _ in 0..<GamePlay.scoreGoal {
-            firstPlayer.nextAttack = .paper
-            secondPlayer.nextAttack = .scissors
-            gameViewModel!.playNextRound(completion: { _ in }, error: { _ in })
+            gameViewModel!.playNextRound(userAttack: .paper, botAttack: .scissors, completion: { _ in })
         }
         let winner = game!.winner()
         XCTAssertTrue(game!.isOver())

@@ -83,20 +83,19 @@ class GameViewModel: NSObject {
             return
         }
         
-        guard game.everyoneIsReady() else {
+        guard game.everyoneIsReady(), let userAttack = userPlayer.nextAttack, let botAttack = botPlayer.nextAttack else {
             print("GameViewModel - startNextRound(): Someone isn't ready")
+            delegate.anErrorHappendDuringTheLastRound("Looks like someone isn't ready")
             return
         }
         
-        playNextRound(completion: { potentialWinner in
+        playNextRound(userAttack: userAttack, botAttack: botAttack) { potentialWinner in
             if let winner = potentialWinner{
                 delegate.userDidWinTheRound(winner)
             } else {
                 delegate.roundFinishedWithAnEquality()
             }
-        }, error: { errorMessage in
-            delegate.anErrorHappendDuringTheLastRound(errorMessage)
-        })
+        }
         
         if game.isOver(), let winner = game.winner() {
             delegate.gameIsOver(irlPlayerWin(winner))
@@ -108,26 +107,15 @@ class GameViewModel: NSObject {
     /// - Parameters:
     ///   - completion: Completion block who return the winner of the round or nil if there is equality
     ///   - error: Completion block if an anomalous happend
-    func playNextRound(completion: (User?)->(), error: (String)->()) {
-        guard game.everyoneIsReady() else {
-            print("GameViewModel - playNextRound(): It looks like someone isn't ready")
-            error("Someone isn't ready")
-            return
-        }
-        
-        // I allow myself to forcecast the optional nextAttack because
-        // I check earlier in the guard statement of this method that everyoneIsReady()
-        let firstUserAttack = userPlayer.nextAttack!
-        let secondUserAttack = botPlayer.nextAttack!
-        
+    func playNextRound(userAttack: AttackType, botAttack: AttackType, completion: (User?)->()) {
         // Equality (same attack)
-        guard firstUserAttack.rawValue != secondUserAttack.rawValue else {
+        guard userAttack.rawValue != botAttack.rawValue else {
             completion(nil)
             game.resetPlayersAttack()
             return
         }
         
-        if firstUserAttack.isStrongerThan(secondUserAttack) {
+        if userAttack.isStrongerThan(botAttack) {
             userPlayer.didWinARound()
             completion(userPlayer)
         } else {
