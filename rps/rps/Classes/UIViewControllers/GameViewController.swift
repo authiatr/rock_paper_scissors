@@ -21,6 +21,7 @@ class GameViewController: UIViewController, GameViewModelDelegate {
     @IBOutlet weak var rockButton: UIButton!
     @IBOutlet weak var paperButton: UIButton!
     @IBOutlet weak var scissorsButton: UIButton!
+    @IBOutlet weak var nextRoundButton: UIButton!
     @IBOutlet weak var attacksStackView: UIStackView!
     
     // MARK: - Variables
@@ -38,6 +39,12 @@ class GameViewController: UIViewController, GameViewModelDelegate {
         resetUIAfterOneRound()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configUI()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -49,14 +56,23 @@ class GameViewController: UIViewController, GameViewModelDelegate {
     
     // MARK: - Configuration
     
+    fileprivate func configUI() {
+        guard let viewModel = gameViewModel else {
+            print("GameViewController - configUI(): Can't refresh the UI without a GameViewModel set")
+            return
+        }
+        
+        firstUserNameLabel.text = viewModel.firstUser.type.emoji()
+        secondUserNameLabel.text = viewModel.secondUser.type.emoji()
+        nextRoundButton.setTitle(NSLocalizedString("game.next_round", comment: "Next round"), for: .normal)
+    }
+    
     fileprivate func refreshUI() {
         guard let viewModel = gameViewModel else {
             print("GameViewController - refreshUI(): Can't refresh the UI without a GameViewModel set")
             return
         }
         
-        firstUserNameLabel.text = viewModel.firstUser.type.emoji()
-        secondUserNameLabel.text = viewModel.secondUser.type.emoji()
         firstUserScoreLabel.text = viewModel.scoreSentenceFor(viewModel.firstUser)
         secondUserScoreLabel.text = viewModel.scoreSentenceFor(viewModel.secondUser)
     }
@@ -66,6 +82,7 @@ class GameViewController: UIViewController, GameViewModelDelegate {
         secondUserNextAttackLabel.text = NSLocalizedString("game.unset", comment: "Unset attack")
         firstUserTrophyLabel.isHidden = true
         secondUserTrophyLabel.isHidden = true
+        nextRoundButton.isHidden = true
         
         refreshUI()
     }
@@ -75,6 +92,20 @@ class GameViewController: UIViewController, GameViewModelDelegate {
     fileprivate func displayUsersAttack() {
         firstUserNextAttackLabel.text = gameViewModel?.firstUser.nextAttack?.emoji()
         secondUserNextAttackLabel.text = gameViewModel?.secondUser.nextAttack?.emoji()
+    }
+    
+    fileprivate func animateTrophy(of winner: User) {
+        let labelToAnimate = (winner === gameViewModel?.firstUser) ? firstUserTrophyLabel : secondUserTrophyLabel
+        labelToAnimate?.alpha = 0.0
+        labelToAnimate?.isHidden = false
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            labelToAnimate?.alpha = 1.0
+        }) { [weak self] completed in
+            if completed, let viewModel = self?.gameViewModel {
+                self?.nextRoundButton.isHidden = viewModel.game.isOver()
+            }
+        }
     }
     
     // MARK: - IBActions
@@ -95,6 +126,13 @@ class GameViewController: UIViewController, GameViewModelDelegate {
         default:
             fatalError("GameViewController - attackButtonDidTouchUpInside(): Wrong sender")
         }
+        
+        attacksStackView.isUserInteractionEnabled = false
+    }
+    
+    @IBAction func nextRoundDidTouchUpInside(_ sender: Any) {
+        resetUIAfterOneRound()
+        attacksStackView.isUserInteractionEnabled = true
     }
     
     // MARK: - GameViewModelDelegate
@@ -107,20 +145,16 @@ class GameViewController: UIViewController, GameViewModelDelegate {
         displayUsersAttack()
         refreshUI()
         
-        if player === gameViewModel?.firstUser {
-            firstUserTrophyLabel.isHidden = false
-        } else {
-            secondUserTrophyLabel.isHidden = false
-        }
+        animateTrophy(of: player)
     }
     
     func roundFinishedWithAnEquality() {
         displayUsersAttack()
+        nextRoundButton.isHidden = false
     }
     
     func gameIsOver(_ winner: User) {
         refreshUI()
-        
     }
     
     func anErrorHappendDuringTheLastRound(_ error: String) {

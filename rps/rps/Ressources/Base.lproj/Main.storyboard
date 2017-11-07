@@ -285,14 +285,34 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsQ-c6-4sX">
+                                <rect key="frame" x="8" y="525.5" width="359" height="133.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <state key="normal" title="Next Round">
+                                    <color key="titleColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextRoundDidTouchUpInside:" destination="HVA-cD-A0u" eventType="touchUpInside" id="5Ar-Nv-9NI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZZB-yJ-KN5" firstAttribute="height" secondItem="6yc-ks-CzO" secondAttribute="height" multiplier="1/5" id="5Nc-k3-9Ly"/>
+                            <constraint firstItem="ZZB-yJ-KN5" firstAttribute="leading" secondItem="hsQ-c6-4sX" secondAttribute="leading" id="9kc-Lm-745"/>
                             <constraint firstItem="Hfk-HD-bg3" firstAttribute="top" secondItem="6yc-ks-CzO" secondAttribute="top" constant="64" id="AwH-YT-Uwk"/>
                             <constraint firstAttribute="bottom" secondItem="ZZB-yJ-KN5" secondAttribute="bottom" constant="8" id="Cr1-qZ-0vL"/>
+                            <constraint firstItem="ZZB-yJ-KN5" firstAttribute="trailing" secondItem="hsQ-c6-4sX" secondAttribute="trailing" id="DnB-hw-EK6"/>
+                            <constraint firstItem="ZZB-yJ-KN5" firstAttribute="top" secondItem="hsQ-c6-4sX" secondAttribute="top" id="GsY-tF-aam"/>
                             <constraint firstItem="neX-c0-AnS" firstAttribute="trailing" secondItem="ZZB-yJ-KN5" secondAttribute="trailing" constant="8" id="JwO-OI-OIK"/>
                             <constraint firstItem="Hfk-HD-bg3" firstAttribute="leading" secondItem="neX-c0-AnS" secondAttribute="leading" id="fGC-hT-XOl"/>
+                            <constraint firstItem="ZZB-yJ-KN5" firstAttribute="bottom" secondItem="hsQ-c6-4sX" secondAttribute="bottom" id="hoy-a9-Vk2"/>
                             <constraint firstItem="ZZB-yJ-KN5" firstAttribute="leading" secondItem="neX-c0-AnS" secondAttribute="leading" constant="8" id="pRt-R4-zbY"/>
                             <constraint firstItem="Hfk-HD-bg3" firstAttribute="trailing" secondItem="neX-c0-AnS" secondAttribute="trailing" id="rM5-rb-hfv"/>
                             <constraint firstItem="ZZB-yJ-KN5" firstAttribute="top" secondItem="Hfk-HD-bg3" secondAttribute="bottom" id="vIg-gY-HIc"/>
@@ -305,6 +325,7 @@
                         <outlet property="firstUserNextAttackLabel" destination="T67-VJ-ImA" id="q7B-4H-efJ"/>
                         <outlet property="firstUserScoreLabel" destination="qSB-QA-hLt" id="ipl-QA-J29"/>
                         <outlet property="firstUserTrophyLabel" destination="uQz-nW-6Q6" id="bjr-rE-4Mw"/>
+                        <outlet property="nextRoundButton" destination="hsQ-c6-4sX" id="BNy-tB-67o"/>
                         <outlet property="paperButton" destination="jLJ-a2-oq9" id="QVI-KY-Sps"/>
                         <outlet property="rockButton" destination="QbB-bv-JAa" id="Wfx-KJ-Dxp"/>
                         <outlet property="scissorsButton" destination="Kvy-8l-zFi" id="31I-sP-Ttf"/>

@@ -18,9 +18,10 @@
 "home.bot_vs_bot"   = "🤖 VS 🤖"; // Bot vs bot button
 
 /* Game */
-"game.score" = "Score: %d/%d";
-"game.unset" = "??";
+"game.score" = "Score: %d/%d"; // User/Bot score sentence
+"game.unset" = "??"; // Text display before an attack is display
+"game.next_round" = "Next Round"; // Next round button
 
 /* Common */
-"error.title" = "Oops";
-"error.ok"    = "Ok";
+"error.title" = "Oops"; // Error alert title
+"error.ok"    = "Ok"; // Error alert ok button
