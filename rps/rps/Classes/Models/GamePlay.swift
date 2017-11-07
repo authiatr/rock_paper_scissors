@@ -36,13 +36,24 @@ class GamePlay: NSObject {
     ///
     /// - Returns: true if someone reach the final score
     func isOver() -> Bool {
+        if winner() != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    /// Get the potential winner
+    ///
+    /// - Returns: The winner or nil if the game isn't finish
+    func winner() -> User? {
         for player in players {
             if player.score == GamePlay.scoreGoal {
-                return true
+                return player
             }
         }
         
-        return false
+        return nil
     }
     
     /// Check if the game should play "alone". If there is no human in the party the should not wait user interactions
