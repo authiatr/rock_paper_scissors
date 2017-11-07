@@ -39,6 +39,8 @@ class GameViewModel: NSObject {
     /// Opponent
     let secondUser: User
     
+    let isBotVsBot: Bool
+    
     // MARK: Variables
     var delegate: GameViewModelDelegate?
     
@@ -52,6 +54,7 @@ class GameViewModel: NSObject {
         game = gamePlay
         firstUser = gamePlay.players[0]
         secondUser = gamePlay.players[1]
+        isBotVsBot = game.containsOnlyBots()
     }
     
     // MARK: - Game methods
@@ -61,6 +64,11 @@ class GameViewModel: NSObject {
         
         firstUser.nextAttack = attack
         
+        startNextRound()
+    }
+    
+    func startBotVsBotRound() {
+        preprareBotsAttacks()
         startNextRound()
     }
     

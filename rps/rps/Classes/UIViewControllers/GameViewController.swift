@@ -82,7 +82,13 @@ class GameViewController: UIViewController, GameViewModelDelegate {
         secondUserNextAttackLabel.text = NSLocalizedString("game.unset", comment: "Unset attack")
         firstUserTrophyLabel.isHidden = true
         secondUserTrophyLabel.isHidden = true
-        nextRoundButton.isHidden = true
+        
+        if let viewModel = gameViewModel, viewModel.isBotVsBot {
+            nextRoundButton.isHidden = false
+            attacksStackView.isHidden = true
+        } else {
+            nextRoundButton.isHidden = true
+        }
         
         refreshUI()
     }
@@ -133,6 +139,10 @@ class GameViewController: UIViewController, GameViewModelDelegate {
     @IBAction func nextRoundDidTouchUpInside(_ sender: Any) {
         resetUIAfterOneRound()
         attacksStackView.isUserInteractionEnabled = true
+        
+        if let viewModel = gameViewModel, viewModel.isBotVsBot {
+            viewModel.startBotVsBotRound()
+        }
     }
     
     // MARK: - GameViewModelDelegate
