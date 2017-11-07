@@ -64,7 +64,7 @@ class GamePlay: NSObject {
             return
         }
         
-        if firstUser.nextAttack!.isStrongerThan(secondUserAttack) {
+        if firstUserAttack.isStrongerThan(secondUserAttack) {
             firstUser.didWinARound()
             completion(firstUser)
         } else {
