@@ -24,7 +24,7 @@ class GamePlayTests: XCTestCase {
     
     func testGameContainsNotEnoughPlayers() {
         let game = GamePlay(players: [ human ])
-        XCTAssertEqual(game, nil)
+        XCTAssertNil(game)
     }
     
     func testGameContainsMinimumPlayersCount() {
@@ -37,7 +37,7 @@ class GamePlayTests: XCTestCase {
         let bot = User(.bot)
         let game = GamePlay(players: [ human, bot ])
         bot.nextAttack = .paper
-        XCTAssertEqual(game!.everyoneIsReady(), false)
+        XCTAssertFalse(game!.everyoneIsReady())
     }
     
     func testEveryoneIsReady() {
@@ -46,7 +46,7 @@ class GamePlayTests: XCTestCase {
         let game = GamePlay(players: [ human, bot ])
         human.nextAttack = .rock
         bot.nextAttack = .paper
-        XCTAssertEqual(game!.everyoneIsReady(), true)
+        XCTAssertTrue(game!.everyoneIsReady())
     }
     
     func testWhoIsNotReady() {
@@ -54,7 +54,7 @@ class GamePlayTests: XCTestCase {
         let bot = User(.bot)
         let game = GamePlay(players: [ human, bot ])
         human.nextAttack = .rock
-        XCTAssertEqual(game!.whoIsNotReady().contains(bot), true)
+        XCTAssertTrue(game!.whoIsNotReady().contains(bot))
     }
     
     func testEveryoneDidSetHerAttack() {
@@ -63,24 +63,24 @@ class GamePlayTests: XCTestCase {
         let game = GamePlay(players: [ human, bot ])
         human.nextAttack = .rock
         bot.nextAttack = .paper
-        XCTAssertEqual(game!.whoIsNotReady().isEmpty, true)
+        XCTAssertTrue(game!.whoIsNotReady().isEmpty)
     }
     
     func testGameIsNotOver() {
         let game = GamePlay(players: [ human, bot ])
-        XCTAssertEqual(game!.isOver(), false)
+        XCTAssertFalse(game!.isOver())
     }
     
     func testGameShouldAutoPlay() {
         let bot1 = User(.bot)
         let bot2 = User(.bot)
         let game = GamePlay(players: [ bot1, bot2 ])
-        XCTAssertEqual(game!.shouldAutoPlay(), true)
+        XCTAssertTrue(game!.shouldAutoPlay())
     }
     
     func testGameShouldNotAutoPlay() {
         let game = GamePlay(players: [ human, bot ])
-        XCTAssertEqual(game!.shouldAutoPlay(), false)
+        XCTAssertFalse(game!.shouldAutoPlay())
     }
     
     func testGameContainsOnlyBot() {

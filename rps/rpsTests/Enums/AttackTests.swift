@@ -23,33 +23,33 @@ class AttackTests: XCTestCase {
     // Paper tests
     func testPaperWinVersusRock() {
         let paper = AttackType.paper
-        XCTAssertEqual(paper.isStrongerThan(.rock), true)
+        XCTAssertTrue(paper.isStrongerThan(.rock))
     }
     
     func testPaperLooseVersusScissors() {
         let paper = AttackType.paper
-        XCTAssertEqual(paper.isWeakerThan(.scissors), true)
+        XCTAssertTrue(paper.isWeakerThan(.scissors))
     }
     
     // Rock tests
     func testRockWinVersusScissors() {
         let rock = AttackType.rock
-        XCTAssertEqual(rock.isStrongerThan(.scissors), true)
+        XCTAssertTrue(rock.isStrongerThan(.scissors))
     }
     
     func testRockLooseVersusPaper() {
         let rock = AttackType.rock
-        XCTAssertEqual(rock.isWeakerThan(.paper), true)
+        XCTAssertTrue(rock.isWeakerThan(.paper))
     }
     
     // Scissors tests
     func testScissorsWinVersusPaper() {
         let scissors = AttackType.scissors
-        XCTAssertEqual(scissors.isStrongerThan(.paper), true)
+        XCTAssertTrue(scissors.isStrongerThan(.paper))
     }
     
     func testScissorsLooseVersusRock() {
         let scissors = AttackType.scissors
-        XCTAssertEqual(scissors.isWeakerThan(.rock), true)
+        XCTAssertTrue(scissors.isWeakerThan(.rock))
     }
 }

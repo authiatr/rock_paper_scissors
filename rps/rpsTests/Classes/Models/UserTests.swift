@@ -32,7 +32,7 @@ class UserTests: XCTestCase {
     
     func testNextAttackAtInitialization() {
         let human = User(.human)
-        XCTAssertEqual(human.nextAttack, nil)
+        XCTAssertNil(human.nextAttack)
     }
     
     func testNextAttackInitialization() {
