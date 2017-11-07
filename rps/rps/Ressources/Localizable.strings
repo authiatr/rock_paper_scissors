@@ -9,3 +9,10 @@
 "rock" = "Rock";
 "paper" = "Paper";
 "scissors" = "Scissors";
+
+/* Home */
+"home.emojis_title" = "👊✋✌️";  // Home emojis title
+"home.title"        = "Rock, Paper, Scissors..."; // Home title
+"home.game_mode"    = "Select your mode:"; // Home select your mode sentence
+"home.human_vs_bot" = "🤓 VS 🤖"; // Human vs bot button
+"home.bot_vs_bot"   = "🤖 VS 🤖"; // Bot vs bot button 

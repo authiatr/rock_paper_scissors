@@ -1,24 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="rps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nhe-kg-kZ2">
+                                <rect key="frame" x="0.0" y="492.5" width="375" height="166.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELA-Z5-oed">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXe-Rv-mnE">
+                                                <rect key="frame" x="25" y="8" width="325" height="67.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                <state key="normal" title="🤓 VS 🤖">
+                                                    <color key="titleColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="humanVsBotButtonDidTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6tb-1u-ix4"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="lXe-Rv-mnE" firstAttribute="leading" secondItem="ELA-Z5-oed" secondAttribute="leading" constant="25" id="6Cj-cf-Yfe"/>
+                                            <constraint firstAttribute="trailing" secondItem="lXe-Rv-mnE" secondAttribute="trailing" constant="25" id="Pgq-Ql-l33"/>
+                                            <constraint firstItem="lXe-Rv-mnE" firstAttribute="top" secondItem="ELA-Z5-oed" secondAttribute="top" constant="8" id="gdG-pf-IV7"/>
+                                            <constraint firstAttribute="bottom" secondItem="lXe-Rv-mnE" secondAttribute="bottom" constant="8" id="hwG-Le-6Jc"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-4k-pUo">
+                                        <rect key="frame" x="0.0" y="83.5" width="375" height="83"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpt-uT-oBp">
+                                                <rect key="frame" x="25" y="8" width="325" height="67"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                <state key="normal" title="🤖 VS 🤖">
+                                                    <color key="titleColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="botVsBotButtonDidTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3XF-wF-AEp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="zpt-uT-oBp" firstAttribute="top" secondItem="xoc-4k-pUo" secondAttribute="top" constant="8" id="2KU-US-pVs"/>
+                                            <constraint firstAttribute="bottom" secondItem="zpt-uT-oBp" secondAttribute="bottom" constant="8" id="3hW-ZH-sMy"/>
+                                            <constraint firstItem="zpt-uT-oBp" firstAttribute="leading" secondItem="xoc-4k-pUo" secondAttribute="leading" constant="25" id="51i-BF-Phi"/>
+                                            <constraint firstAttribute="trailing" secondItem="zpt-uT-oBp" secondAttribute="trailing" constant="25" id="NS6-75-Img"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your mode:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYb-Tj-aGQ">
+                                <rect key="frame" x="25" y="443" width="325" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👊✋✌️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ju-wX-hKj">
+                                <rect key="frame" x="120" y="40" width="135" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rock, Paper, Scissors..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BM3-QL-VVW">
+                                <rect key="frame" x="25" y="113" width="325" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nhe-kg-kZ2" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/4" id="7hn-8H-rfs"/>
+                            <constraint firstItem="BM3-QL-VVW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="AdW-Io-DE6"/>
+                            <constraint firstItem="8Ju-wX-hKj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JTH-xo-D03"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nhe-kg-kZ2" secondAttribute="bottom" constant="8" id="R1V-TX-Q2e"/>
+                            <constraint firstItem="nhe-kg-kZ2" firstAttribute="top" secondItem="wYb-Tj-aGQ" secondAttribute="bottom" constant="13" id="UnM-lI-VEz"/>
+                            <constraint firstItem="BM3-QL-VVW" firstAttribute="top" secondItem="8Ju-wX-hKj" secondAttribute="bottom" constant="25" id="bBn-fL-ZOe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BM3-QL-VVW" secondAttribute="trailing" constant="25" id="dba-uk-eGo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nhe-kg-kZ2" secondAttribute="trailing" id="hPr-xh-fJo"/>
+                            <constraint firstItem="wYb-Tj-aGQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="maM-Ed-mLA"/>
+                            <constraint firstItem="8Ju-wX-hKj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="wGV-2X-fb2"/>
+                            <constraint firstItem="nhe-kg-kZ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yL1-MF-CPY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wYb-Tj-aGQ" secondAttribute="trailing" constant="25" id="yqb-Ap-zpL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="botVsBotButton" destination="zpt-uT-oBp" id="FDj-SF-sQy"/>
+                        <outlet property="emojiLabel" destination="8Ju-wX-hKj" id="VA1-mw-2Cb"/>
+                        <outlet property="gameModeLabel" destination="wYb-Tj-aGQ" id="sRh-LT-cgF"/>
+                        <outlet property="humanVsBotButton" destination="lXe-Rv-mnE" id="KRV-or-HmT"/>
+                        <outlet property="titleLabel" destination="BM3-QL-VVW" id="Haf-YN-WvH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
     </scenes>
 </document>
