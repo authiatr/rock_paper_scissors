@@ -25,14 +25,18 @@ protocol GameViewModelDelegate {
     
     /// Call when the game is over. Someone reach the maximum score
     ///
-    /// - Parameter winner: Game winner
-    func gameIsOver(_ winner: User)
+    /// - Parameter winner: Check if the first player did win
+    func gameIsOver(_ didWin: Bool)
 }
 
 class GameViewModel: NSObject {
     // MARK: - Constants
     let game: GamePlay
+    
+    /// Can be a bot or a user but it represent the IRL player
     let firstUser: User
+    
+    /// Opponent
     let secondUser: User
     
     // MARK: Variables
@@ -66,8 +70,8 @@ class GameViewModel: NSObject {
         }
         
         // If the party is already over we don't want to continue
-        if let winner = game.winner() {
-            delegate.gameIsOver(winner)
+        if game.isOver(), let winner = game.winner() {
+            delegate.gameIsOver(irlPlayerWin(winner))
             return
         }
         
@@ -87,7 +91,7 @@ class GameViewModel: NSObject {
         })
         
         if game.isOver(), let winner = game.winner() {
-            delegate.gameIsOver(winner)
+            delegate.gameIsOver(irlPlayerWin(winner))
         }
     }
     
@@ -150,5 +154,12 @@ class GameViewModel: NSObject {
     
     func scoreSentenceFor(_ player: User) -> String {
         return String(format: NSLocalizedString("game.score", comment: "Score sentence"), player.score, GamePlay.scoreGoal)
+    }
+    
+    /// Check if the real user (not the bot opponent) win
+    ///
+    /// - Returns: True if he did, false if he lost
+    func irlPlayerWin(_ gameWinner: User) -> Bool {
+        return firstUser === gameWinner
     }
 }

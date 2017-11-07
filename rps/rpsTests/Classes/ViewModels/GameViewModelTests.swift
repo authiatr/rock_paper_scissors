@@ -74,4 +74,38 @@ class GameViewModelTests: XCTestCase {
         }
         XCTAssertTrue(game!.isOver())
     }
+    
+    func testIRLPlayerWon() {
+        let firstPlayer = User(.human) // Real player
+        let secondPlayer = User(.human)
+        let game = GamePlay(players: [ firstPlayer, secondPlayer ])
+        let gameViewModel = GameViewModel(game: game!)
+        
+        for _ in 0..<GamePlay.scoreGoal {
+            firstPlayer.nextAttack = .rock
+            secondPlayer.nextAttack = .scissors
+            gameViewModel!.playNextRound(completion: { _ in }, error: { _ in })
+        }
+        let winner = game!.winner()
+        XCTAssertTrue(game!.isOver())
+        XCTAssertNotNil(winner)
+        XCTAssertTrue(gameViewModel!.irlPlayerWin(winner!))
+    }
+    
+    func testIRLPlayerLost() {
+        let firstPlayer = User(.human) // Real player
+        let secondPlayer = User(.human)
+        let game = GamePlay(players: [ firstPlayer, secondPlayer ])
+        let gameViewModel = GameViewModel(game: game!)
+        
+        for _ in 0..<GamePlay.scoreGoal {
+            firstPlayer.nextAttack = .paper
+            secondPlayer.nextAttack = .scissors
+            gameViewModel!.playNextRound(completion: { _ in }, error: { _ in })
+        }
+        let winner = game!.winner()
+        XCTAssertTrue(game!.isOver())
+        XCTAssertNotNil(winner)
+        XCTAssertFalse(gameViewModel!.irlPlayerWin(winner!))
+    }
 }

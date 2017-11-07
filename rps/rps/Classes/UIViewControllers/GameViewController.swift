@@ -153,7 +153,7 @@ class GameViewController: UIViewController, GameViewModelDelegate {
         nextRoundButton.isHidden = false
     }
     
-    func gameIsOver(_ winner: User) {
+    func gameIsOver(_ didWin: Bool) {
         refreshUI()
     }
     
