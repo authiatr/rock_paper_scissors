@@ -155,6 +155,21 @@ class GameViewController: UIViewController, GameViewModelDelegate {
     
     func gameIsOver(_ didWin: Bool) {
         refreshUI()
+        
+        let alertTitle = didWin ? NSLocalizedString("game.winner.title", comment: "Winner alert title") : NSLocalizedString("game.looser.title", comment: "Looser alert title")
+        let alertMessage = didWin ? NSLocalizedString("game.winner.message", comment: "Winner alert message") : NSLocalizedString("game.looser.message", comment: "Looser alert message")
+        let alertOk = didWin ? NSLocalizedString("game.winner.ok", comment: "Winner alert ok button") : NSLocalizedString("game.looser.ok", comment: "Looser alert ok button")
+    
+        let alert = UIAlertController(title: alertTitle,
+                                      message: alertMessage,
+                                      preferredStyle: .alert)
+        let okAction = UIAlertAction(title: alertOk,
+                                     style: .default) { [weak self] _ in
+                                        self?.navigationController?.popViewController(animated: true)
+        }
+        
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
     
     func anErrorHappendDuringTheLastRound(_ error: String) {

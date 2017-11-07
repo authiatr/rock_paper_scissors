@@ -21,6 +21,12 @@
 "game.score" = "Score: %d/%d"; // User/Bot score sentence
 "game.unset" = "??"; // Text display before an attack is display
 "game.next_round" = "Next Round"; // Next round button
+"game.winner.title" = "Wouhou";
+"game.looser.title" = "Too bad";
+"game.winner.message" = "Congratulation you beat the 🤖!";
+"game.looser.message" = "The 🤖 did beat you!";
+"game.winner.ok" = "😎";
+"game.looser.ok" = "😒";
 
 /* Common */
 "error.title" = "Oops"; // Error alert title
