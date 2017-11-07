@@ -76,4 +76,17 @@ class GamePlay: NSObject {
     func resetPlayersAttack() {
         players.forEach{ $0.nextAttack = nil }
     }
+    
+    /// Check if the party contains only bots player
+    ///
+    /// - Returns: True if there is only bots, false if there is at least one human
+    func containsOnlyBots() -> Bool {
+        for user in players {
+            if user.type == .human {
+                return false
+            }
+        }
+        
+        return true
+    }
 }

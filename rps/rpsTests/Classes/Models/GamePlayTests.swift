@@ -82,4 +82,16 @@ class GamePlayTests: XCTestCase {
         let game = GamePlay(players: [ human, bot ])
         XCTAssertEqual(game!.shouldAutoPlay(), false)
     }
+    
+    func testGameContainsOnlyBot() {
+        let botOne = User(.bot)
+        let botTwo = User(.bot)
+        let game = GamePlay(players: [ botOne, botTwo ])
+        XCTAssertTrue(game!.containsOnlyBots())
+    }
+    
+    func testGameContainsAtLeastOneHuman() {
+        let game = GamePlay(players: [ human, bot ])
+        XCTAssertFalse(game!.containsOnlyBots())
+    }
 }
