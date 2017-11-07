@@ -34,10 +34,10 @@ class GameViewModel: NSObject {
     let game: GamePlay
     
     /// Can be a bot or a user but it represent the IRL player
-    let firstUser: User
+    let userPlayer: User
     
     /// Opponent
-    let secondUser: User
+    let botPlayer: User
     
     let isBotVsBot: Bool
     
@@ -52,8 +52,8 @@ class GameViewModel: NSObject {
         }
         
         game = gamePlay
-        firstUser = gamePlay.players[0]
-        secondUser = gamePlay.players[1]
+        userPlayer = gamePlay.players[0]
+        botPlayer = gamePlay.players[1]
         isBotVsBot = game.containsOnlyBots()
     }
     
@@ -62,7 +62,7 @@ class GameViewModel: NSObject {
     func userDidPlay(_ attack: AttackType) {
         preprareBotsAttacks()
         
-        firstUser.nextAttack = attack
+        userPlayer.nextAttack = attack
         
         startNextRound()
     }
@@ -128,8 +128,8 @@ class GameViewModel: NSObject {
         
         // I allow myself to forcecast the optional nextAttack because
         // I check earlier in the guard statement of this method that everyoneIsReady()
-        let firstUserAttack = firstUser.nextAttack!
-        let secondUserAttack = secondUser.nextAttack!
+        let firstUserAttack = userPlayer.nextAttack!
+        let secondUserAttack = botPlayer.nextAttack!
         
         // Equality (same attack)
         guard firstUserAttack.rawValue != secondUserAttack.rawValue else {
@@ -139,11 +139,11 @@ class GameViewModel: NSObject {
         }
         
         if firstUserAttack.isStrongerThan(secondUserAttack) {
-            firstUser.didWinARound()
-            completion(firstUser)
+            userPlayer.didWinARound()
+            completion(userPlayer)
         } else {
-            secondUser.didWinARound()
-            completion(secondUser)
+            botPlayer.didWinARound()
+            completion(botPlayer)
         }
         
         game.resetPlayersAttack()
@@ -172,6 +172,6 @@ class GameViewModel: NSObject {
     ///
     /// - Returns: True if he did, false if he lost
     func irlPlayerWin(_ gameWinner: User) -> Bool {
-        return firstUser === gameWinner
+        return userPlayer === gameWinner
     }
 }

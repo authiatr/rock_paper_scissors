@@ -62,8 +62,8 @@ class GameViewController: UIViewController, GameViewModelDelegate {
             return
         }
         
-        firstUserNameLabel.text = viewModel.nameSentenceFor(viewModel.firstUser, info: NSLocalizedString("game.you", comment: "You (represent the player)"))
-        secondUserNameLabel.text = viewModel.nameSentenceFor(viewModel.secondUser, info: NSLocalizedString("game.opponent", comment: "Opponent"))
+        firstUserNameLabel.text = viewModel.nameSentenceFor(viewModel.userPlayer, info: NSLocalizedString("game.you", comment: "You (represent the player)"))
+        secondUserNameLabel.text = viewModel.nameSentenceFor(viewModel.botPlayer, info: NSLocalizedString("game.opponent", comment: "Opponent"))
         nextRoundButton.setTitle(NSLocalizedString("game.next_round", comment: "Next round"), for: .normal)
     }
     
@@ -73,8 +73,8 @@ class GameViewController: UIViewController, GameViewModelDelegate {
             return
         }
         
-        firstUserScoreLabel.text = viewModel.scoreSentenceFor(viewModel.firstUser)
-        secondUserScoreLabel.text = viewModel.scoreSentenceFor(viewModel.secondUser)
+        firstUserScoreLabel.text = viewModel.scoreSentenceFor(viewModel.userPlayer)
+        secondUserScoreLabel.text = viewModel.scoreSentenceFor(viewModel.botPlayer)
     }
     
     fileprivate func resetUIAfterOneRound() {
@@ -96,12 +96,12 @@ class GameViewController: UIViewController, GameViewModelDelegate {
     // MARK: - Utils
     
     fileprivate func displayUsersAttack() {
-        firstUserNextAttackLabel.text = gameViewModel?.firstUser.nextAttack?.emoji()
-        secondUserNextAttackLabel.text = gameViewModel?.secondUser.nextAttack?.emoji()
+        firstUserNextAttackLabel.text = gameViewModel?.userPlayer.nextAttack?.emoji()
+        secondUserNextAttackLabel.text = gameViewModel?.botPlayer.nextAttack?.emoji()
     }
     
     fileprivate func animateTrophy(of winner: User) {
-        let labelToAnimate = (winner === gameViewModel?.firstUser) ? firstUserTrophyLabel : secondUserTrophyLabel
+        let labelToAnimate = (winner === gameViewModel?.userPlayer) ? firstUserTrophyLabel : secondUserTrophyLabel
         labelToAnimate?.alpha = 0.0
         labelToAnimate?.isHidden = false
         

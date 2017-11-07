@@ -29,15 +29,15 @@ class GameViewModelTests: XCTestCase {
         let game = GamePlay(players: [ human, bot ])
         let gameViewModel = GameViewModel(game: game!)
         XCTAssertNotNil(gameViewModel)
-        XCTAssertNotNil(gameViewModel!.firstUser)
-        XCTAssertNotNil(gameViewModel!.secondUser)
+        XCTAssertNotNil(gameViewModel!.userPlayer)
+        XCTAssertNotNil(gameViewModel!.botPlayer)
     }
     
     func testPlayerOrder() {
         let game = GamePlay(players: [ human, bot ])
         let gameViewModel = GameViewModel(game: game!)
-        XCTAssertTrue(gameViewModel!.firstUser === human)
-        XCTAssertTrue(gameViewModel!.secondUser === bot)
+        XCTAssertTrue(gameViewModel!.userPlayer === human)
+        XCTAssertTrue(gameViewModel!.botPlayer === bot)
     }
     
     func testBotsAttackAreReady() {
@@ -46,8 +46,8 @@ class GameViewModelTests: XCTestCase {
         let game = GamePlay(players: [ firstBot, secondBot ])
         let gameViewModel = GameViewModel(game: game!)
         gameViewModel!.preprareBotsAttacks()
-        XCTAssertNotNil(gameViewModel!.firstUser.nextAttack)
-        XCTAssertNotNil(gameViewModel!.secondUser.nextAttack)
+        XCTAssertNotNil(gameViewModel!.userPlayer.nextAttack)
+        XCTAssertNotNil(gameViewModel!.botPlayer.nextAttack)
     }
     
     func testOnlyBotsAttackAreReady() {
@@ -56,8 +56,8 @@ class GameViewModelTests: XCTestCase {
         let game = GamePlay(players: [ human, bot ])
         let gameViewModel = GameViewModel(game: game!)
         gameViewModel!.preprareBotsAttacks()
-        XCTAssertNil(gameViewModel!.firstUser.nextAttack)
-        XCTAssertNotNil(gameViewModel!.secondUser.nextAttack)
+        XCTAssertNil(gameViewModel!.userPlayer.nextAttack)
+        XCTAssertNotNil(gameViewModel!.botPlayer.nextAttack)
     }
     
     func testGameIsOver() {
