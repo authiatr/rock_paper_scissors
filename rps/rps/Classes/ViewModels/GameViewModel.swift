@@ -115,17 +115,6 @@ class GameViewModel: NSObject {
             return
         }
         
-        // Compare the attacks. I'm gonna assume there is ONLY 2 players in the game right now.
-        // To handle more than two player we should create the missing score rules
-        // Example:
-        // Player 1 Attack -> paper
-        // Player 2 Attack -> rock
-        // Player 3 Attack -> scissors
-        // Result:
-        // Player 1 win vs Player 2 but loose vs Player 3
-        // Player 2 win vs Player 3 but loose vs Player 1
-        // Player 3 win vs Player 1 but loose vs Player 2 -> Who win points??
-        
         // I allow myself to forcecast the optional nextAttack because
         // I check earlier in the guard statement of this method that everyoneIsReady()
         let firstUserAttack = userPlayer.nextAttack!
