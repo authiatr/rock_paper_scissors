@@ -22,6 +22,9 @@
 		69D083F41FB1269400206F64 /* Collection+RandomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D083F31FB1269400206F64 /* Collection+RandomItem.swift */; };
 		69D083F61FB1314200206F64 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D083F51FB1314200206F64 /* HomeViewController.swift */; };
 		69D083FE1FB232FF00206F64 /* Collection+RandomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D083F31FB1269400206F64 /* Collection+RandomItem.swift */; };
+		69D083FA1FB1E50F00206F64 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D083F91FB1E50F00206F64 /* GameViewModel.swift */; };
+		69D083FC1FB2319F00206F64 /* GameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D083FB1FB2319F00206F64 /* GameViewModelTests.swift */; };
+		69D083FD1FB2325900206F64 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D083F91FB1E50F00206F64 /* GameViewModel.swift */; };
 		69E3B0EC1FB0E9EF003DB53B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E3B0EB1FB0E9EF003DB53B /* AppDelegate.swift */; };
 		69E3B0F11FB0E9EF003DB53B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E3B0EF1FB0E9EF003DB53B /* Main.storyboard */; };
 		69E3B0F31FB0E9EF003DB53B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E3B0F21FB0E9EF003DB53B /* Assets.xcassets */; };
@@ -49,6 +52,8 @@
 		69D083EF1FB10B2000206F64 /* GamePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlay.swift; sourceTree = "<group>"; };
 		69D083F31FB1269400206F64 /* Collection+RandomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+RandomItem.swift"; sourceTree = "<group>"; };
 		69D083F51FB1314200206F64 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		69D083F91FB1E50F00206F64 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		69D083FB1FB2319F00206F64 /* GameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewModelTests.swift; path = Classes/ViewModels/GameViewModelTests.swift; sourceTree = "<group>"; };
 		69E3B0E81FB0E9EF003DB53B /* rps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E3B0EB1FB0E9EF003DB53B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		69E3B0F01FB0E9EF003DB53B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -127,6 +132,7 @@
 			children = (
 				69D083DB1FB0F51500206F64 /* AttackTests.swift */,
 				69D083ED1FB10A8500206F64 /* GamePlayTests.swift */,
+				69D083FB1FB2319F00206F64 /* GameViewModelTests.swift */,
 				69E3B1021FB0E9EF003DB53B /* Info.plist */,
 				69D083E71FB1062E00206F64 /* UserTests.swift */,
 			);
@@ -166,6 +172,7 @@
 		69E3B10E1FB0EC85003DB53B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				69D083F91FB1E50F00206F64 /* GameViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -294,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69D083FA1FB1E50F00206F64 /* GameViewModel.swift in Sources */,
 				69D083F01FB10B2000206F64 /* GamePlay.swift in Sources */,
 				69D083F41FB1269400206F64 /* Collection+RandomItem.swift in Sources */,
 				69D083E61FB1046D00206F64 /* User.swift in Sources */,
@@ -308,10 +316,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69D083FD1FB2325900206F64 /* GameViewModel.swift in Sources */,
 				69D083E91FB1066400206F64 /* User.swift in Sources */,
 				69D083EA1FB1068C00206F64 /* UserType.swift in Sources */,
 				69D083E81FB1062E00206F64 /* UserTests.swift in Sources */,
 				69D083DC1FB0F51500206F64 /* AttackTests.swift in Sources */,
+				69D083FC1FB2319F00206F64 /* GameViewModelTests.swift in Sources */,
 				69D083E01FB0F73800206F64 /* AttackType.swift in Sources */,
 				69D083FE1FB232FF00206F64 /* Collection+RandomItem.swift in Sources */,
 				69D083EE1FB10A8500206F64 /* GamePlayTests.swift in Sources */,
