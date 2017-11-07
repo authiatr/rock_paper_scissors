@@ -2,7 +2,7 @@
 //  GameViewModelTests.swift
 //  rpsTests
 //
-//  Created by Pitus on 07/11/2017.
+//  Created by Robin on 07/11/2017.
 //  Copyright © 2017 Robin Authiat. All rights reserved.
 //
 
