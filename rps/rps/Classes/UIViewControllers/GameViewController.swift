@@ -62,8 +62,8 @@ class GameViewController: UIViewController, GameViewModelDelegate {
             return
         }
         
-        firstUserNameLabel.text = viewModel.firstUser.type.emoji()
-        secondUserNameLabel.text = viewModel.secondUser.type.emoji()
+        firstUserNameLabel.text = viewModel.nameSentenceFor(viewModel.firstUser, info: NSLocalizedString("game.you", comment: "You (represent the player)"))
+        secondUserNameLabel.text = viewModel.nameSentenceFor(viewModel.secondUser, info: NSLocalizedString("game.opponent", comment: "Opponent"))
         nextRoundButton.setTitle(NSLocalizedString("game.next_round", comment: "Next round"), for: .normal)
     }
     

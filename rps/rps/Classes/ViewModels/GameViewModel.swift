@@ -160,6 +160,10 @@ class GameViewModel: NSObject {
 
     // MARK: - Utils
     
+    func nameSentenceFor(_ player: User, info: String) -> String {
+        return player.type.emoji() + "\n" + info
+    }
+    
     func scoreSentenceFor(_ player: User) -> String {
         return String(format: NSLocalizedString("game.score", comment: "Score sentence"), player.score, GamePlay.scoreGoal)
     }
