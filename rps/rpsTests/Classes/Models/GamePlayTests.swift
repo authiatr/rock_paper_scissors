@@ -71,19 +71,6 @@ class GamePlayTests: XCTestCase {
         XCTAssertEqual(game!.isOver(), false)
     }
     
-    func testGameIsOver() {
-        let human = User(.human)
-        let bot = User(.bot)
-        let game = GamePlay(players: [ human, bot ])
-        
-        for _ in 0..<GamePlay.scoreGoal {
-            human.nextAttack = .rock
-            bot.nextAttack = .paper
-            game!.playNextRound({ player in }, notReady: { players in })
-        }
-        XCTAssertEqual(game!.isOver(), true)
-    }
-    
     func testGameShouldAutoPlay() {
         let bot1 = User(.bot)
         let bot2 = User(.bot)
@@ -94,27 +81,5 @@ class GamePlayTests: XCTestCase {
     func testGameShouldNotAutoPlay() {
         let game = GamePlay(players: [ human, bot ])
         XCTAssertEqual(game!.shouldAutoPlay(), false)
-    }
-    
-    func testHumanDidWinRoundVsBot() {
-        let human = User(.human)
-        let bot = User(.bot)
-        let game = GamePlay(players: [ human, bot ])
-        human.nextAttack = .paper
-        bot.nextAttack = .rock
-        game!.playNextRound({ player in }, notReady: { players in })
-        XCTAssertEqual(human.score, 1)
-        XCTAssertEqual(bot.score, 0)
-    }
-    
-    func testHumanDidLoseRoundVsBot() {
-        let human = User(.human)
-        let bot = User(.bot)
-        let game = GamePlay(players: [ human, bot ])
-        human.nextAttack = .rock
-        bot.nextAttack = .paper
-        game!.playNextRound({ player in }, notReady: { players in })
-        XCTAssertEqual(human.score, 0)
-        XCTAssertEqual(bot.score, 1)
     }
 }

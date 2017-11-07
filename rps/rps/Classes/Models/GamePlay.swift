@@ -25,56 +25,6 @@ class GamePlay: NSObject {
     
     // MARK: Functions
     
-    /// Play the next round of the game
-    ///
-    /// - Parameters:
-    ///   - completion: Completion block who return the winner of the round or nil if there is equality
-    ///   - notReady: Completion block if at least one User isn't ready
-    func playNextRound(_ completion: (User?)->(), notReady: ([User])->()) {
-        guard everyoneIsReady() else {
-            print("GamePlay - playNextRound(): It looks like someone isn't ready")
-            notReady(whoIsNotReady())
-            return
-        }
-        
-        // Compare the attacks. I'm gonna assume there is ONLY 2 players in the game right now.
-        // To handle more than two player we should create the missing score rules
-        // Example:
-        // Player 1 Attack -> paper
-        // Player 2 Attack -> rock
-        // Player 3 Attack -> scissors
-        // Result:
-        // Player 1 win vs Player 2 but loose vs Player 3
-        // Player 2 win vs Player 3 but loose vs Player 1
-        // Player 3 win vs Player 1 but loose vs Player 2 -> Who win points??
-        
-        // A GamePlay object isn't valid with less than two players, index can't be out of array bounds
-        let firstUser = players[0]
-        let secondUser = players[1]
-        
-        // I allow myself to forcecast the optional nextAttack because
-        // I check earlier in the guard statement of this method than everyoneIsReady()
-        let firstUserAttack = firstUser.nextAttack!
-        let secondUserAttack = secondUser.nextAttack!
-        
-        // Equality (same attack)
-        guard firstUserAttack.rawValue != secondUserAttack.rawValue else {
-            completion(nil)
-            resetPlayersAttack()
-            return
-        }
-        
-        if firstUserAttack.isStrongerThan(secondUserAttack) {
-            firstUser.didWinARound()
-            completion(firstUser)
-        } else {
-            secondUser.didWinARound()
-            completion(secondUser)
-        }
-        
-        resetPlayersAttack()
-    }
-    
     /// Check if the players have their next attack set
     ///
     /// - Returns: true if they are ready, false if they aren't
