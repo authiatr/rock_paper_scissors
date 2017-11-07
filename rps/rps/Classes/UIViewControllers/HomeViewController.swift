@@ -33,14 +33,21 @@ class HomeViewController: UIViewController {
         botVsBotButton.setTitle(NSLocalizedString("home.bot_vs_bot", comment: "bot vs bot"), for: .normal)
     }
     
-    // MARK: - Utils
+    // MARK: - Navigation
     
-    // MARK: - IBActions
-    @IBAction func humanVsBotButtonDidTouchUpInside(_ sender: Any) {
-        // TODO: launch a game with a human vs bot mode
-    }
-    
-    @IBAction func botVsBotButtonDidTouchUpInside(_ sender: Any) {
-        // TODO: launch a game with a bot vs bot mode
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showHumanVsBotGameViewControllerSegue", let vc = segue.destination as? GameViewController {
+            let human = User(.human)
+            let bot = User(.bot)
+            if let game = GamePlay(players: [ human, bot ]), let viewModel = GameViewModel(game: game) {
+                vc.gameViewModel = viewModel
+            }
+        } else if segue.identifier == "showBotVsBotGameViewControllerSegue", let vc = segue.destination as? GameViewController {
+            let botOne = User(.bot)
+            let botTwo = User(.bot)
+            if let game = GamePlay(players: [ botOne, botTwo ]), let viewModel = GameViewModel(game: game) {
+                vc.gameViewModel = viewModel
+            }
+        }
     }
 }
