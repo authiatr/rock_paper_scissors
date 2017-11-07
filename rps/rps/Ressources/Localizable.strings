@@ -13,6 +13,7 @@
 /* Home */
 "home.emojis_title" = "👊✋✌️";  // Home emojis title
 "home.title"        = "Rock, Paper, Scissors..."; // Home title
+"home.description"  = "Classic game to have fun for the next 5 minutes...\nThere is two game modes: \n- The classic one (🤓 VS 🤖) \n- The second one (🤖 VS 🤖) you let the bot play randomly for you (perfect mode for the most unfortunate).";
 "home.game_mode"    = "Select your mode:"; // Home select your mode sentence
 "home.human_vs_bot" = "🤓 VS 🤖"; // Human vs bot button
 "home.bot_vs_bot"   = "🤖 VS 🤖"; // Bot vs bot button

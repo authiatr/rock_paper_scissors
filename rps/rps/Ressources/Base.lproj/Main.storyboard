@@ -96,16 +96,26 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Game short description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMM-yd-Qd5">
+                                <rect key="frame" x="25" y="187" width="325" height="236"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nhe-kg-kZ2" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/4" id="7hn-8H-rfs"/>
+                            <constraint firstItem="FMM-yd-Qd5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="9TB-dX-4Wd"/>
                             <constraint firstItem="BM3-QL-VVW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="AdW-Io-DE6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FMM-yd-Qd5" secondAttribute="trailing" constant="25" id="Dwq-l1-ikQ"/>
+                            <constraint firstItem="FMM-yd-Qd5" firstAttribute="top" secondItem="BM3-QL-VVW" secondAttribute="bottom" id="GFL-jc-5BC"/>
                             <constraint firstItem="8Ju-wX-hKj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JTH-xo-D03"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nhe-kg-kZ2" secondAttribute="bottom" constant="8" id="R1V-TX-Q2e"/>
                             <constraint firstItem="nhe-kg-kZ2" firstAttribute="top" secondItem="wYb-Tj-aGQ" secondAttribute="bottom" constant="13" id="UnM-lI-VEz"/>
                             <constraint firstItem="BM3-QL-VVW" firstAttribute="top" secondItem="8Ju-wX-hKj" secondAttribute="bottom" constant="25" id="bBn-fL-ZOe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BM3-QL-VVW" secondAttribute="trailing" constant="25" id="dba-uk-eGo"/>
+                            <constraint firstItem="wYb-Tj-aGQ" firstAttribute="top" secondItem="FMM-yd-Qd5" secondAttribute="bottom" constant="20" id="hEA-rx-YEz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nhe-kg-kZ2" secondAttribute="trailing" id="hPr-xh-fJo"/>
                             <constraint firstItem="wYb-Tj-aGQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="maM-Ed-mLA"/>
                             <constraint firstItem="8Ju-wX-hKj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="wGV-2X-fb2"/>
@@ -117,6 +127,7 @@
                     <navigationItem key="navigationItem" id="S2y-hl-dEW"/>
                     <connections>
                         <outlet property="botVsBotButton" destination="zpt-uT-oBp" id="FDj-SF-sQy"/>
+                        <outlet property="descriptionLabel" destination="FMM-yd-Qd5" id="q3L-8l-rAW"/>
                         <outlet property="emojiLabel" destination="8Ju-wX-hKj" id="VA1-mw-2Cb"/>
                         <outlet property="gameModeLabel" destination="wYb-Tj-aGQ" id="sRh-LT-cgF"/>
                         <outlet property="humanVsBotButton" destination="lXe-Rv-mnE" id="KRV-or-HmT"/>

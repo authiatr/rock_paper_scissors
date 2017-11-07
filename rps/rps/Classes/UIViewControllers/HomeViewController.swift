@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var gameModeLabel: UILabel!
     @IBOutlet weak var humanVsBotButton: UIButton!
     @IBOutlet weak var botVsBotButton: UIButton!
@@ -28,6 +29,7 @@ class HomeViewController: UIViewController {
     fileprivate func refreshUI() {
         emojiLabel.text = NSLocalizedString("home.emojis_title", comment: "Emojis title")
         titleLabel.text = NSLocalizedString("home.title", comment: "rock, paper, scissors")
+        descriptionLabel.text = NSLocalizedString("home.description", comment: "Game description")
         gameModeLabel.text = NSLocalizedString("home.game_mode", comment: "Game modes")
         humanVsBotButton.setTitle(NSLocalizedString("home.human_vs_bot", comment: "human vs bot"), for: .normal)
         botVsBotButton.setTitle(NSLocalizedString("home.bot_vs_bot", comment: "bot vs bot"), for: .normal)
