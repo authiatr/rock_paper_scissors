@@ -21,6 +21,7 @@
 		69D083F11FB10B2000206F64 /* GamePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D083EF1FB10B2000206F64 /* GamePlay.swift */; };
 		69D083F41FB1269400206F64 /* Collection+RandomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D083F31FB1269400206F64 /* Collection+RandomItem.swift */; };
 		69D083F61FB1314200206F64 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D083F51FB1314200206F64 /* HomeViewController.swift */; };
+		69D083FE1FB232FF00206F64 /* Collection+RandomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D083F31FB1269400206F64 /* Collection+RandomItem.swift */; };
 		69E3B0EC1FB0E9EF003DB53B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E3B0EB1FB0E9EF003DB53B /* AppDelegate.swift */; };
 		69E3B0F11FB0E9EF003DB53B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E3B0EF1FB0E9EF003DB53B /* Main.storyboard */; };
 		69E3B0F31FB0E9EF003DB53B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E3B0F21FB0E9EF003DB53B /* Assets.xcassets */; };
@@ -312,6 +313,7 @@
 				69D083E81FB1062E00206F64 /* UserTests.swift in Sources */,
 				69D083DC1FB0F51500206F64 /* AttackTests.swift in Sources */,
 				69D083E01FB0F73800206F64 /* AttackType.swift in Sources */,
+				69D083FE1FB232FF00206F64 /* Collection+RandomItem.swift in Sources */,
 				69D083EE1FB10A8500206F64 /* GamePlayTests.swift in Sources */,
 				69D083F11FB10B2000206F64 /* GamePlay.swift in Sources */,
 			);
