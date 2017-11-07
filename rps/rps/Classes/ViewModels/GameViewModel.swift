@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol GameViewModelDelegate {
+protocol GameViewModelDelegate: class {
     /// Call before the next round
     func prepareForTheNextRound()
     
@@ -42,7 +42,7 @@ class GameViewModel: NSObject {
     let isBotVsBot: Bool
     
     // MARK: Variables
-    var delegate: GameViewModelDelegate?
+    weak var delegate: GameViewModelDelegate?
     
     // MARK: - Custom init
     init?(game gamePlay: GamePlay) {
