@@ -21,6 +21,8 @@ class GameViewController: UIViewController, GameViewModelDelegate {
     @IBOutlet weak var rockButton: UIButton!
     @IBOutlet weak var paperButton: UIButton!
     @IBOutlet weak var scissorsButton: UIButton!
+    @IBOutlet weak var spockButton: UIButton!
+    @IBOutlet weak var lizardButton: UIButton!
     @IBOutlet weak var nextRoundButton: UIButton!
     @IBOutlet weak var attacksStackView: UIStackView!
     
@@ -128,6 +130,12 @@ class GameViewController: UIViewController, GameViewModelDelegate {
             break
         case scissorsButton:
             viewModel.userDidPlay(.scissors)
+            break
+        case spockButton:
+            viewModel.userDidPlay(.spock)
+            break
+        case lizardButton:
+            viewModel.userDidPlay(.lizard)
             break
         default:
             fatalError("GameViewController - attackButtonDidTouchUpInside(): Wrong sender")

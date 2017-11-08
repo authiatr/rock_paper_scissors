@@ -12,26 +12,36 @@ enum AttackType: String {
     case rock = "rock"
     case paper = "paper"
     case scissors = "scissors"
+    case spock = "spock"
+    case lizard = "lizard"
     
     func isStrongerThan(_ attack: AttackType) -> Bool {
         switch self {
         case .rock:
-            return [.scissors].contains(attack)
+            return [.scissors, .lizard].contains(attack)
         case .paper:
-            return [.rock].contains(attack)
+            return [.rock, .spock].contains(attack)
         case .scissors:
-            return [.paper].contains(attack)
+            return [.paper, .lizard].contains(attack)
+        case .spock:
+            return [.scissors, .rock].contains(attack)
+        case .lizard:
+            return [.spock, .paper].contains(attack)
         }
     }
     
     func isWeakerThan(_ attack: AttackType) -> Bool {
         switch self {
         case .rock:
-            return [.paper].contains(attack)
+            return [.paper, .spock].contains(attack)
         case .paper:
-            return [.scissors ].contains(attack)
+            return [.scissors, .lizard ].contains(attack)
         case .scissors:
-            return [.rock].contains(attack)
+            return [.rock, .spock].contains(attack)
+        case .spock:
+            return [.paper, .lizard].contains(attack)
+        case .lizard:
+            return [.scissors, .rock].contains(attack)
         }
     }
     
@@ -43,6 +53,10 @@ enum AttackType: String {
             return "✋"
         case .scissors:
             return "✌"
+        case .spock:
+            return "🖖"
+        case .lizard:
+            return "👌"
         }
     }
     
@@ -57,7 +71,9 @@ enum AttackType: String {
         switch (AttackType.rock) {
         case .rock: allValues.append(.rock); fallthrough
         case .paper: allValues.append(.paper); fallthrough
-        case .scissors: allValues.append(.scissors)
+        case .scissors: allValues.append(.scissors); fallthrough
+        case .spock: allValues.append(.spock); fallthrough
+        case .lizard: allValues.append(.lizard)
         }
         return allValues
     }

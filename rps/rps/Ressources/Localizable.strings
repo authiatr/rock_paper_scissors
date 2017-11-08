@@ -9,6 +9,8 @@
 "rock" = "Rock";
 "paper" = "Paper";
 "scissors" = "Scissors";
+"spock" = "Spock";
+"lizard" = "Lizard";
 
 /* Home */
 "home.emojis_title" = "👊✋✌️";  // Home emojis title

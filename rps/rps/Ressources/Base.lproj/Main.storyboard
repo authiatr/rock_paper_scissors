@@ -244,7 +244,7 @@
                                 <rect key="frame" x="8" y="525.5" width="359" height="133.5"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbB-bv-JAa">
-                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="133.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="65.5" height="133.5"/>
                                         <color key="backgroundColor" red="0.28860788138622384" green="0.57643956218274117" blue="0.35293279194133714" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                         <state key="normal" title="👊">
@@ -260,7 +260,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLJ-a2-oq9">
-                                        <rect key="frame" x="122.5" y="0.0" width="114" height="133.5"/>
+                                        <rect key="frame" x="73.5" y="0.0" width="65.5" height="133.5"/>
                                         <color key="backgroundColor" red="0.28860788139999999" green="0.57643956220000003" blue="0.35293279189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                         <state key="normal" title="✋">
@@ -276,7 +276,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvy-8l-zFi">
-                                        <rect key="frame" x="244.5" y="0.0" width="114.5" height="133.5"/>
+                                        <rect key="frame" x="147" y="0.0" width="65" height="133.5"/>
                                         <color key="backgroundColor" red="0.28860788139999999" green="0.57643956220000003" blue="0.35293279189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                         <state key="normal" title="✌️">
@@ -289,6 +289,38 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="attackButtonDidTouchUpInside:" destination="HVA-cD-A0u" eventType="touchUpInside" id="pL9-j4-yxl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mn-wL-9Ix">
+                                        <rect key="frame" x="220" y="0.0" width="65.5" height="133.5"/>
+                                        <color key="backgroundColor" red="0.28860788139999999" green="0.57643956220000003" blue="0.35293279189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <state key="normal" title="🖖">
+                                            <color key="titleColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="attackButtonDidTouchUpInside:" destination="HVA-cD-A0u" eventType="touchUpInside" id="jYL-Ra-68F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOU-ur-BsR">
+                                        <rect key="frame" x="293.5" y="0.0" width="65.5" height="133.5"/>
+                                        <color key="backgroundColor" red="0.28860788139999999" green="0.57643956220000003" blue="0.35293279189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <state key="normal" title="👌">
+                                            <color key="titleColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="attackButtonDidTouchUpInside:" destination="HVA-cD-A0u" eventType="touchUpInside" id="hla-0t-R5Y"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -333,6 +365,7 @@
                         <outlet property="firstUserNextAttackLabel" destination="T67-VJ-ImA" id="q7B-4H-efJ"/>
                         <outlet property="firstUserScoreLabel" destination="qSB-QA-hLt" id="ipl-QA-J29"/>
                         <outlet property="firstUserTrophyLabel" destination="uQz-nW-6Q6" id="bjr-rE-4Mw"/>
+                        <outlet property="lizardButton" destination="LOU-ur-BsR" id="CRo-hO-rNA"/>
                         <outlet property="nextRoundButton" destination="hsQ-c6-4sX" id="BNy-tB-67o"/>
                         <outlet property="paperButton" destination="jLJ-a2-oq9" id="QVI-KY-Sps"/>
                         <outlet property="rockButton" destination="QbB-bv-JAa" id="Wfx-KJ-Dxp"/>
@@ -341,6 +374,7 @@
                         <outlet property="secondUserNextAttackLabel" destination="6gq-Ci-lX0" id="Udk-Mo-n3q"/>
                         <outlet property="secondUserScoreLabel" destination="nZx-Wz-wHC" id="Us1-IT-IgT"/>
                         <outlet property="secondUserTrophyLabel" destination="9rA-2H-ffp" id="1wN-lR-ZW1"/>
+                        <outlet property="spockButton" destination="8mn-wL-9Ix" id="MgN-dQ-JyD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIA-qN-T22" userLabel="First Responder" sceneMemberID="firstResponder"/>
