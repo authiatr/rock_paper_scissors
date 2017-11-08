@@ -257,7 +257,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="attackButtonDidTouchUpInside:" destination="HVA-cD-A0u" eventType="touchUpInside" id="tk0-kh-omA"/>
-                                            <action selector="humanVsBotButtonDidTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AVG-ag-uqe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLJ-a2-oq9">
@@ -274,7 +273,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="attackButtonDidTouchUpInside:" destination="HVA-cD-A0u" eventType="touchUpInside" id="d2O-2q-HZZ"/>
-                                            <action selector="humanVsBotButtonDidTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K5Y-t4-hzK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvy-8l-zFi">
@@ -291,7 +289,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="attackButtonDidTouchUpInside:" destination="HVA-cD-A0u" eventType="touchUpInside" id="pL9-j4-yxl"/>
-                                            <action selector="humanVsBotButtonDidTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zpd-Jf-cRW"/>
                                         </connections>
                                     </button>
                                 </subviews>
